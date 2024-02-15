@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import './styles.css';
 
 const PostDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -36,11 +37,16 @@ const PostDetailPage: React.FC = () => {
   if (!post) return null;
 
   return (
-    <div>
+    <div className="container">
+      <div className="post-detail">
       <h1>Post Detail Page</h1>
       <p>Title: {post.title}</p>
       <p>Body: {post.body}</p>
+      </div>
+      <div className="back-button">
+
       <Link to="/"><button>Back</button></Link>
+      </div>
     </div>
   );
 };

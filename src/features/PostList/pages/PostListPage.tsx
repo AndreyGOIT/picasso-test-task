@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
+import "./styles.css";
 
 const PostListPage: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([]);
@@ -56,7 +57,7 @@ const PostListPage: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>Post List Page</h1>
       <InfiniteScroll
         dataLength={posts.length}
@@ -65,10 +66,18 @@ const PostListPage: React.FC = () => {
         loader={<h4>Loading...</h4>}
       >
         {posts.map((post, index) => (
-          <div key={index}>
-            <h2>{post.id}{". "}{post.title}</h2>
+          <div className="post" key={index}>
+            <h2>
+              {post.id}
+              {". "}
+              {post.title}
+            </h2>
             <p>{truncateText(post.body, 100)}</p>
-            <Link to={`/post/${post.id}`}><button>View Post {post.id}</button></Link>
+            <div className="button-wrapper">
+              <Link to={`/post/${post.id}`}>
+                <button>View Post {post.id}</button>
+              </Link>
+            </div>
           </div>
         ))}
       </InfiniteScroll>

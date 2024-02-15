@@ -1,0 +1,41 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .post-detail {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post-detail h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .post-detail p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  .back-button {
+    margin-top: 20px;
+  }
+  
+  .back-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .back-button button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,41 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .post {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .post h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .post p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .button-wrapper {
+    margin-top: 20px;
+  }
+  
+  .button-wrapper button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .button-wrapper button:hover {
+    background-color: #0056b3;
+  }
+  
