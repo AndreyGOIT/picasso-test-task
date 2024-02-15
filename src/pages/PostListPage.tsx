@@ -49,6 +49,14 @@ const PostListPage: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
+  // Функция для обрезки текста до нужной длины
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.slice(0, maxLength) + "...";
+  };
+
   return (
     <div>
       <h1>Post List Page</h1>
@@ -60,9 +68,9 @@ const PostListPage: React.FC = () => {
       >
         {posts.map((post, index) => (
           <div key={index}>
-            <h2>{post.title}</h2>
-            <p>{post.body}</p>
-            <Link to={`/post/${post.id}`}>View Post {post.id}</Link>
+            <h2>{post.id}{". "}{post.title}</h2>
+            <p>{truncateText(post.body, 100)}</p>
+            <Link to={`/post/${post.id}`}><button>View Post {post.id}</button></Link>
           </div>
         ))}
       </InfiniteScroll>
