@@ -6,7 +6,6 @@ const PostListPage: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  // const [hasMore, setHasMore] = useState<boolean>(true);
   const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
@@ -21,7 +20,6 @@ const PostListPage: React.FC = () => {
         }
         const data = await response.json();
         setPosts((prevPosts) => [...prevPosts, ...data]);
-        console.log(data);
       } catch (error: any) {
         setError(error.message);
       } finally {
@@ -33,7 +31,7 @@ const PostListPage: React.FC = () => {
 
     // Cleanup function to cancel fetching if component unmounts before fetching completes
     return () => {
-      // Your cleanup logic here if needed
+      // cleanup logic here if needed
     };
   }, [page]); // Re-fetch posts when page changes
 
@@ -49,7 +47,7 @@ const PostListPage: React.FC = () => {
     return <div>Error: {error}</div>;
   }
 
-  // Функция для обрезки текста до нужной длины
+  // Function to trim text to the desired length
   const truncateText = (text: string, maxLength: number) => {
     if (text.length <= maxLength) {
       return text;
