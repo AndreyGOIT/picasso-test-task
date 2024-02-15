@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroll-component";
-import "./styles.css";
 
 const PostListPage: React.FC = () => {
   const [posts, setPosts] = useState<any[]>([]);
